@@ -427,7 +427,7 @@ select:focus-visible {
 .nav{
   display: flex;
   gap: 8px;
-  margin-left: 50px;
+  margin-left: 80px;
   overflow-x: auto;
   white-space: nowrap;
   -webkit-overflow-scrolling: touch;
@@ -436,4 +436,5 @@ select:focus-visible {
 .nav a{
   flex: 0 0 auto;
 }
+
 

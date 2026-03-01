@@ -421,4 +421,18 @@ select:focus-visible {
   .gallery {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
+
+}
+/* 모바일 기본: 메뉴 보이게 + 한 줄 스크롤 */
+.nav{
+  display: flex;
+  gap: 8px;
+  margin-left: 10px;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+.nav a{
+  flex: 0 0 auto;
 }

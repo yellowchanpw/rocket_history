@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ko" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>로켓 상세 | Rocket Detail</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body id="top">
+    <header class="topbar">
+      <div class="container topbar__inner">
+        <a class="brand" href="index.html#top" aria-label="홈으로">
+          <span class="brand__logo" aria-hidden="true">🚀</span>
+          <span class="brand__text">로켓의 역사</span>
+        </a>
+
+        <nav class="nav" aria-label="주요 섹션">
+          <a href="index.html#timeline">타임라인</a>
+          <a href="index.html#milestones">주요 이정표</a>
+          <a href="index.html#gallery">대표 로켓</a>
+        </nav>
+
+        <button id="themeBtn" class="btn btn--ghost" type="button" aria-label="테마 전환">
+          🌙
+        </button>
+      </div>
+    </header>
+
+    <main class="section">
+      <div class="container">
+        <a class="detail-link" href="index.html#timeline">← 타임라인으로</a>
+
+        <div class="detail-card detail-card--spaced">
+          <h1 id="rTitle" class="detail-title">로딩 중...</h1>
+          <p id="rSubtitle" class="detail-subtitle"></p>
+
+          <div class="grid detail-grid">
+            <article class="card">
+              <h3>개요</h3>
+              <p id="rOverview"></p>
+            </article>
+
+            <article class="card">
+              <h3>핵심 기술</h3>
+              <p id="rTech"></p>
+            </article>
+
+            <article class="card">
+              <h3>역사적 의미</h3>
+              <p id="rImpact"></p>
+            </article>
+
+            <article class="card">
+              <h3>키워드</h3>
+              <p id="rTags"></p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <span>© Rocket History (Demo)</span>
+        <a href="#top" class="footer__link">맨 위로</a>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

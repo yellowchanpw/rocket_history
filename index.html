@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="ko" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>로켓의 역사 | Rocket History</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body id="top">
+    <header class="topbar">
+      <div class="container topbar__inner">
+        <a class="brand" href="#top" aria-label="홈으로">
+          <span class="brand__logo" aria-hidden="true">🚀</span>
+          <span class="brand__text">로켓의 역사</span>
+        </a>
+
+        <nav class="nav" aria-label="주요 섹션">
+          <a href="#timeline">타임라인</a>
+          <a href="#milestones">주요 이정표</a>
+          <a href="#gallery">대표 로켓</a>
+          <a href="#about">문의 연락처</a>
+        </nav>
+
+        <button id="themeBtn" class="btn btn--ghost" type="button" aria-label="테마 전환">
+          🌙
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero__inner">
+          <h1>화약에서 재사용 로켓까지</h1>
+          <p class="hero__sub">
+            인류가 하늘을 향해 쏘아 올린 기술의 계보를 시대별로 한눈에 정리합니다.
+          </p>
+
+          <div class="hero__cta">
+            <a class="btn" href="#timeline">타임라인 보기</a>
+            <a class="btn btn--ghost" href="#gallery">대표 로켓 보기</a>
+          </div>
+
+          <div class="hero__stats" aria-label="핵심 연표 요약">
+            <div class="stat">
+              <div class="stat__num">~13C</div>
+              <div class="stat__label">화약 로켓 등장</div>
+            </div>
+            <div class="stat">
+              <div class="stat__num">1957</div>
+              <div class="stat__label">첫 인공위성</div>
+            </div>
+            <div class="stat">
+              <div class="stat__num">1969</div>
+              <div class="stat__label">달 착륙</div>
+            </div>
+            <div class="stat">
+              <div class="stat__num">2015+</div>
+              <div class="stat__label">재사용 상용화</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="timeline" class="section">
+        <div class="container">
+          <div class="section__head">
+            <h2>타임라인</h2>
+
+            <div class="controls" role="search">
+              <label class="sr-only" for="q">타임라인 검색</label>
+              <input
+                id="q"
+                class="input"
+                type="search"
+                placeholder="예: 1969, 아폴로, 재사용"
+                autocomplete="off"
+                aria-label="타임라인 검색"
+              />
+
+              <label class="sr-only" for="era">시대 선택</label>
+              <select id="era" class="select" aria-label="시대 선택">
+                <option value="all">전체 시대</option>
+                <option value="early">초기/전근대</option>
+                <option value="ww2">2차대전/냉전 초기</option>
+                <option value="space">우주개척기</option>
+                <option value="modern">현대/상용화</option>
+              </select>
+
+              <button id="resetBtn" class="btn btn--ghost" type="button">초기화</button>
+            </div>
+          </div>
+
+          <ol id="timelineList" class="timeline" aria-label="로켓 역사 타임라인">
+            <li class="event" data-era="early" data-id="firearrow" data-tags="화약 중국 송나라 불화살 13세기">
+              <div class="event__year">~13세기</div>
+              <div class="event__card">
+                <h3>화약 로켓(불화살) 확산</h3>
+                <p>화약 추진을 이용한 초기 로켓 형태가 전쟁·신호용으로 사용되며 확산.</p>
+                <a class="detail-link" href="rocket.html?id=firearrow">상세보기 →</a>
+              </div>
+            </li>
+
+            <li class="event" data-era="early" data-id="congreve" data-tags="콩그리브 로켓 영국 1800s 인도">
+              <div class="event__year">1800s</div>
+              <div class="event__card">
+                <h3>콩그리브 로켓</h3>
+                <p>군사용 로켓이 체계화되며 사거리·정확도 개선 시도.</p>
+                <a class="detail-link" href="rocket.html?id=congreve">상세보기 →</a>
+              </div>
+            </li>
+
+            <li class="event" data-era="ww2" data-id="goddard1926" data-tags="로버트 고다드 액체연료 1926">
+              <div class="event__year">1926</div>
+              <div class="event__card">
+                <h3>액체연료 로켓 실증</h3>
+                <p>액체 추진제 기반 로켓이 실험적으로 구현되며 현대 로켓의 토대가 형성.</p>
+                <a class="detail-link" href="rocket.html?id=goddard1926">상세보기 →</a>
+              </div>
+            </li>
+
+            <li class="event" data-era="ww2" data-id="v2" data-tags="V-2 독일 1944 폰브라운">
+              <div class="event__year">1944</div>
+              <div class="event__card">
+                <h3>V-2 로켓</h3>
+                <p>대형 액체연료 로켓 기술이 비약적으로 발전. 이후 우주개발 기술로 전이.</p>
+                <a class="detail-link" href="rocket.html?id=v2">상세보기 →</a>
+              </div>
+            </li>
+
+            <li class="event" data-era="space" data-id="sputnik1" data-tags="스푸트니크 1957 소련 인공위성">
+              <div class="event__year">1957</div>
+              <div class="event__card">
+                <h3>스푸트니크 1호</h3>
+                <p>인류 최초의 인공위성 발사. 우주시대 개막.</p>
+                <a class="detail-link" href="rocket.html?id=sputnik1">상세보기 →</a>
+              </div>
+            </li>
+
+            <li class="event" data-era="space" data-id="vostok1" data-tags="가가린 1961 보스토크">
+              <div class="event__year">1961</div>
+              <div class="event__card">
+                <h3>첫 유인 우주비행</h3>
+                <p>유인 우주비행 성공으로 로켓은 ‘탑승 가능한 운송수단’이 됨.</p>
+                <a class="detail-link" href="rocket.html?id=vostok1">상세보기 →</a>
+              </div>
+            </li>
+
+            <li class="event" data-era="space" data-id="saturnv" data-tags="새턴V 1969 아폴로 11 달착륙 Saturn V">
+              <div class="event__year">1969</div>
+              <div class="event__card">
+                <h3>아폴로 11호 달 착륙</h3>
+                <p>초대형 로켓(새턴 V)으로 달 착륙 달성. 시스템 공학의 상징.</p>
+                <a class="detail-link" href="rocket.html?id=saturnv">상세보기 →</a>
+              </div>
+            </li>
+
+            <li class="event" data-era="space" data-id="spaceshuttle" data-tags="우주왕복선 1981 재사용 부분재사용">
+              <div class="event__year">1981</div>
+              <div class="event__card">
+                <h3>우주왕복선 시대</h3>
+                <p>부분 재사용 개념을 실용화했으나 운영 비용·복잡성이 과제로 남음.</p>
+                <a class="detail-link" href="rocket.html?id=spaceshuttle">상세보기 →</a>
+              </div>
+            </li>
+
+            <li class="event" data-era="modern" data-id="falcon9" data-tags="Falcon 9 2015 1단착륙 재사용 SpaceX 상용">
+              <div class="event__year">2015</div>
+              <div class="event__card">
+                <h3>1단 부스터 수직착륙</h3>
+                <p>재사용 로켓이 비용 구조를 바꾸며 상업 발사 시장을 재편.</p>
+                <a class="detail-link" href="rocket.html?id=falcon9">상세보기 →</a>
+              </div>
+            </li>
+
+            <li class="event" data-era="modern" data-id="artemis" data-tags="아르테미스 달귀환 대형로켓 2020s NASA">
+              <div class="event__year">2020s</div>
+              <div class="event__card">
+                <h3>달 귀환·초대형 발사체 경쟁</h3>
+                <p>유인 달 탐사 재개와 초대형 발사체의 본격 경쟁이 진행 중.</p>
+                <a class="detail-link" href="rocket.html?id=artemis">상세보기 →</a>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section id="milestones" class="section section--alt">
+        <div class="container">
+          <h2>주요 이정표</h2>
+          <div class="grid">
+            <article class="card">
+              <h3>추진제 혁신</h3>
+              <p>고체 → 액체 → 복합/고성능 추진제, 엔진 사이클 고도화.</p>
+            </article>
+            <article class="card">
+              <h3>유도·항법</h3>
+              <p>관성항법·컴퓨팅 발전으로 정확도와 신뢰성이 상승.</p>
+            </article>
+            <article class="card">
+              <h3>재사용</h3>
+              <p>발사체를 ‘소모품’에서 ‘플릿(운용 자산)’으로 전환.</p>
+            </article>
+            <article class="card">
+              <h3>상용화</h3>
+              <p>위성·인터넷·지구관측 수요가 생태계를 확대.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="gallery" class="section">
+        <div class="container">
+          <h2>대표 로켓(예시)</h2>
+          <div class="gallery">
+            <div class="rocket">
+              <div class="rocket__badge">1950s</div>
+              <h3>R-7 계열</h3>
+              <p>초기 우주발사의 상징. 인공위성·유인비행 시대를 열었다.</p>
+            </div>
+            <div class="rocket">
+              <div class="rocket__badge">1960s</div>
+              <h3>Saturn V</h3>
+              <p>달 착륙을 가능하게 한 초대형 발사체의 아이콘.</p>
+            </div>
+            <div class="rocket">
+              <div class="rocket__badge">2010s</div>
+              <h3>Falcon 9</h3>
+              <p>1단 재사용을 실전 운영으로 정착시켜 비용 구조를 바꿨다.</p>
+            </div>
+            <div class="rocket">
+              <div class="rocket__badge">2020s</div>
+              <h3>차세대 초대형</h3>
+              <p>달·화성·대형 탑재를 목표로 기술·운영 모델이 빠르게 진화 중.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section section--alt">
+        <div class="container">
+          <h2>문의</h2>
+          <p class="about">
+            <a class="about__link" href="mailto:yellowchanpw@gmail.com">yellowchanpw@gmail.com</a>
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <span>© Rocket History (Demo)</span>
+        <a href="#top" class="footer__link">맨 위로</a>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

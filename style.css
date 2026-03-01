@@ -44,7 +44,7 @@ body {
   color: var(--text);
 
   /* 고정 상단바 높이만큼 여백 */
-  padding-top: 64px;
+  padding-top: 120px;
 }
 
 a {
@@ -436,5 +436,6 @@ select:focus-visible {
 .nav a{
   flex: 0 0 auto;
 }
+
 
 

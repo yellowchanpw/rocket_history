@@ -10,11 +10,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>로켓 상세 | Rocket Detail</title>
+    <meta name="description" content="로켓 상세 페이지" />
     <link rel="stylesheet" href="style.css" />
   </head>
 
-  <body id="top">
-    <header class="topbar">
+  <body id="top" class="page-detail">
+    <a class="skip" href="#main">본문 바로가기</a>
+
+    <header class="topbar" role="banner">
       <div class="container topbar__inner">
         <a class="brand" href="index.html#top" aria-label="홈으로">
           <span class="brand__logo" aria-hidden="true">🚀</span>
@@ -23,66 +26,74 @@
 
         <nav class="nav" aria-label="주요 섹션">
           <a href="index.html#timeline">타임라인</a>
-          <a href="index.html#milestones">주요 이정표</a>
-          <a href="index.html#gallery">대표 로켓</a>
+          <a href="index.html#milestones">역사적 인물</a>
         </nav>
 
-        <button id="themeBtn" class="btn btn--ghost" type="button" aria-label="테마 전환">🌙</button>
+        <div class="topbar__actions">
+          <a class="btn btn--ghost" href="index.html#timeline">목록으로</a>
+          <button id="themeBtn" class="btn btn--ghost" type="button">
+            🌙
+          </button>
+        </div>
       </div>
     </header>
 
-    <main class="section">
-      <div class="container">
-        <a class="detail-link" href="index.html#timeline">← 타임라인으로</a>
+    <main id="main" class="detail">
+      <div class="container detail__inner">
 
-        <div class="detail-card detail-card--spaced">
-          <h1 id="rTitle" class="detail-title">로딩 중...</h1>
-          <p id="rSubtitle" class="detail-subtitle"></p>
+        <!-- 왼쪽 -->
+        <div class="detail__media">
+          <div class="detail__sticky">
 
-          <!-- 🔥 50 / 50 레이아웃 시작 -->
-          <div class="detail-split">
+            <header class="detail__mediaHead">
+              <h1 id="rTitle">로켓</h1>
+              <p id="rSub" class="muted">부제</p>
+            </header>
 
-            <!-- 왼쪽: 이미지 -->
-            <figure class="detail-media">
-              <img id="rImg" class="detail-img" alt="" loading="lazy" />
-              <figcaption id="rImgCredit" class="detail-credit"></figcaption>
-            </figure>
+            <img
+              id="rImg"
+              class="detail__img"
+              src=""
+              alt=""
+              loading="lazy"
+              decoding="async"
+            />
 
-            <!-- 오른쪽: 텍스트 카드 -->
-            <div class="grid detail-grid">
+          
 
-              <article class="card">
-                <h3>개요</h3>
-                <p id="rOverview" class="preline"></p>
-              </article>
-
-              <article class="card">
-                <h3>핵심 기술</h3>
-                <p id="rTech" class="preline"></p>
-              </article>
-
-              <article class="card">
-                <h3>역사적 의미</h3>
-                <p id="rImpact" class="preline"></p>
-              </article>
-
-              <article class="card">
-                <h3>키워드</h3>
-                <p id="rTags"></p>
-              </article>
-
-            </div>
           </div>
-          <!-- 🔥 50 / 50 레이아웃 끝 -->
-
         </div>
+
+        <!-- 오른쪽 -->
+     <div class="detail__content">
+  <!-- ✅ 개요 위 남는 공간: 가운데축 기준 대칭 prev/next -->
+  <div class="detail__pager" aria-label="상세 페이지 이동">
+    <a id="prevBtn" class="btn btn--ghost" href="#" aria-label="이전 상세">← 이전</a>
+    <a id="nextBtn" class="btn btn--ghost" href="#" aria-label="다음 상세">다음 →</a>
+  </div>
+
+  <section class="card detail-card">
+    <h2>개요</h2>
+    <div id="rOverview"></div>
+  </section>
+
+  <section class="card detail-card">
+    <h2>핵심 기술</h2>
+    <div id="rTech"></div>
+  </section>
+
+  <section class="card detail-card">
+    <h2>역사적 의미</h2>
+    <div id="rImpact"></div>
+  </section>
+</div>
       </div>
     </main>
 
     <footer class="footer">
       <div class="container footer__inner">
-        <span>© Rocket History (Demo)</span>
-        <a href="#top" class="footer__link">맨 위로</a>
+        <p class="muted">© Rocket History.Chanhui Ko</p>
+        <a class="btn btn--ghost" href="#top">맨 위로</a>
       </div>
     </footer>
 

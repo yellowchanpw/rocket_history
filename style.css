@@ -36,14 +36,10 @@ html {
 
 body {
   margin: 0;
-  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans KR",
-    "Apple SD Gothic Neo", Arial, "맑은 고딕", sans-serif;
+  font-family: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
   background: radial-gradient(1200px 800px at 20% 10%, rgba(125, 211, 252, 0.12), transparent 60%),
-    radial-gradient(900px 700px at 80% 20%, rgba(167, 243, 208, 0.1), transparent 55%),
-    var(--bg);
+    radial-gradient(900px 700px at 80% 20%, rgba(167, 243, 208, 0.1), transparent 55%), var(--bg);
   color: var(--text);
-
-  /* 고정 상단바 높이만큼 여백 */
   padding-top: 64px;
 }
 
@@ -79,7 +75,9 @@ select:focus-visible {
   border: 0;
 }
 
-/* 상단바 */
+/* =========================
+   Topbar
+========================= */
 .topbar {
   position: fixed;
   top: 0;
@@ -114,13 +112,18 @@ select:focus-visible {
   font-size: 20px;
 }
 
+/* 모바일 기본: 메뉴 보이게 + 한 줄 스크롤 */
 .nav {
-  display: none;
-  gap: 14px;
+  display: flex;
+  gap: 8px;
   margin-left: 10px;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
 }
 
 .nav a {
+  flex: 0 0 auto;
   padding: 8px 10px;
   border-radius: 10px;
   color: var(--muted);
@@ -132,7 +135,6 @@ select:focus-visible {
 }
 
 .btn {
-  margin-left: auto;
   padding: 10px 12px;
   border-radius: 12px;
   border: 1px solid var(--line);
@@ -146,17 +148,70 @@ select:focus-visible {
 .btn--ghost {
   background: transparent;
   box-shadow: none;
-  margin-left: 0;
 }
 
 .controls .btn--ghost {
-  margin-left: 0;
   box-shadow: none;
 }
 
-/* Hero */
+/* ✅ Topbar CTA buttons */
+.topbar__actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-left: auto; /* nav 다음에 오면 오른쪽으로 붙음 */
+}
+
+.topbar__actions .btn {
+  padding: 8px 10px;
+  font-weight: 800;
+  box-shadow: none;
+}
+
+#themeBtn {
+  margin-left: 10px;
+}
+
+/* =========================
+   Hero (배경 이미지 방식)
+========================= */
 .hero {
-  padding: 56px 0 30px;
+  position: relative;
+
+  /* ✅ 세로 길이: 여기서 결정됨 */
+  min-height: 86vh;         /* 더 길게 원하면 92vh, 100vh 가능 */
+  padding: 110px 0 80px;    /* 위/아래 여백으로도 높이 확보 */
+  display: flex;
+  align-items: center;
+
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/0/0e/Artemis_1_SLS_Rollout.jpg");
+  background-size: cover;
+  background-position: center 35%; /* 로켓이 위로 올라오게 하고 싶으면 25~40% 조절 */
+  background-repeat: no-repeat;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(5, 10, 15, 0.88) 0%,
+    rgba(5, 10, 15, 0.62) 38%,
+    rgba(5, 10, 15, 0.35) 70%,
+    rgba(5, 10, 15, 0.12) 100%
+  );
+}
+
+.hero__inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+/* 기존 split은 더 이상 “좌우 이미지” 용도가 아니므로 단순 블록 */
+.hero__split {
+  display: block;
 }
 
 .hero__inner h1 {
@@ -170,13 +225,8 @@ select:focus-visible {
   color: var(--muted);
   font-size: 16px;
   max-width: 70ch;
-}
-
-.hero__cta {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin: 18px 0 26px;
+  font-weight: 400;
+  opacity: 0.92;
 }
 
 .hero__stats {
@@ -193,7 +243,7 @@ select:focus-visible {
 }
 
 .stat__num {
-  font-weight: 900;
+  font-weight: 800;
   font-size: 18px;
 }
 
@@ -203,7 +253,9 @@ select:focus-visible {
   margin-top: 4px;
 }
 
-/* Sections */
+/* =========================
+   Sections
+========================= */
 .section {
   padding: 34px 0;
 }
@@ -246,7 +298,20 @@ select:focus-visible {
   appearance: none;
 }
 
-/* Timeline */
+/* Timeline era select: black bg / white text */
+.select {
+  background: #000 !important;
+  color: #fff !important;
+  border-color: rgba(255, 255, 255, 0.22);
+}
+.select option {
+  background: #000;
+  color: #fff;
+}
+
+/* =========================
+   Timeline
+========================= */
 .timeline {
   list-style: none;
   margin: 0;
@@ -276,6 +341,17 @@ select:focus-visible {
   box-shadow: var(--shadow);
 }
 
+.event__card--link {
+  display: block;
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.event__card--link:hover {
+  transform: translateY(-2px);
+  border-color: rgba(125, 211, 252, 0.35);
+  background: linear-gradient(180deg, rgba(125, 211, 252, 0.06), rgba(255, 255, 255, 0.02));
+}
+
 .event__card h3 {
   margin: 0 0 8px;
   font-size: 16px;
@@ -287,7 +363,17 @@ select:focus-visible {
   line-height: 1.6;
 }
 
-/* Cards / Grid */
+.card__hint {
+  display: inline-block;
+  margin-top: 10px;
+  color: var(--accent);
+  font-weight: 800;
+  font-size: 13px;
+}
+
+/* =========================
+   Cards / Grid
+========================= */
 .grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -302,6 +388,17 @@ select:focus-visible {
   box-shadow: var(--shadow);
 }
 
+.card--link {
+  display: block;
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.card--link:hover {
+  transform: translateY(-2px);
+  border-color: rgba(167, 243, 208, 0.35);
+  background: linear-gradient(180deg, rgba(167, 243, 208, 0.06), rgba(255, 255, 255, 0.02));
+}
+
 .card h3 {
   margin: 0 0 8px;
 }
@@ -312,7 +409,9 @@ select:focus-visible {
   line-height: 1.6;
 }
 
-/* Gallery */
+/* =========================
+   Gallery
+========================= */
 .gallery {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -328,6 +427,17 @@ select:focus-visible {
   position: relative;
 }
 
+.rocket--link {
+  display: block;
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.rocket--link:hover {
+  transform: translateY(-2px);
+  border-color: rgba(125, 211, 252, 0.35);
+  background: linear-gradient(180deg, rgba(125, 211, 252, 0.12), rgba(255, 255, 255, 0.03));
+}
+
 .rocket__badge {
   display: inline-flex;
   align-items: center;
@@ -341,7 +451,9 @@ select:focus-visible {
   margin-bottom: 10px;
 }
 
-/* About */
+/* =========================
+   About / Footer
+========================= */
 .about {
   color: var(--muted);
   line-height: 1.8;
@@ -352,7 +464,6 @@ select:focus-visible {
   text-decoration: underline;
 }
 
-/* Footer */
 .footer {
   border-top: 1px solid var(--line);
   padding: 18px 0;
@@ -370,7 +481,9 @@ select:focus-visible {
   text-decoration: underline;
 }
 
-/* Detail page helpers */
+/* =========================
+   Detail page helpers
+========================= */
 .detail-link {
   display: inline-block;
   margin-top: 10px;
@@ -403,14 +516,70 @@ select:focus-visible {
   margin-top: 10px;
 }
 
+.detail-media {
+  margin: 12px 0 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.detail-img {
+  width: 100%;
+  display: block;
+  max-height: 520px;
+  object-fit: cover;
+}
+
+.detail-credit {
+  padding: 10px 12px;
+  font-size: 12px;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.preline {
+  white-space: pre-line;
+}
+
 .hidden {
   display: none !important;
 }
 
-/* Responsive */
+/* ===== Typography System ===== */
+h1 {
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  font-size: clamp(30px, 5vw, 52px);
+}
+
+h2 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+h3 {
+  font-weight: 600;
+}
+
+p {
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+.brand__text {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+/* =========================
+   Responsive
+========================= */
 @media (min-width: 820px) {
   .nav {
-    display: flex;
+    overflow-x: visible;
   }
 
   .hero__stats {
@@ -421,17 +590,32 @@ select:focus-visible {
   .gallery {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
-}
-/* 모바일 기본: 메뉴 보이게 + 한 줄 스크롤 */
-.nav{
-  display: flex;
-  gap: 8px;
-  margin-left: 10px;
-  overflow-x: auto;
-  white-space: nowrap;
-  -webkit-overflow-scrolling: touch;
-}
 
-.nav a{
-  flex: 0 0 auto;
+  /* Detail split */
+  .detail-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: start;
+  }
+
+  .detail-media {
+    position: sticky;
+    top: 80px;
+    max-height: 680px;
+  }
+
+  .detail-img {
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+    max-height: none;
+  }
+}
+/* Hero 텍스트를 topbar container와 정확히 정렬 */
+.hero__inner {
+  position: relative;
+  z-index: 2;
+  width: min(1100px, calc(100% - 32px));
+  margin: 0 auto;
 }

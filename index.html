@@ -10,11 +10,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>로켓의 역사 | Rocket History</title>
+    <meta
+      name="description"
+      content="로켓의 역사 타임라인과 대표 발사체를 한눈에: 초기 화약 로켓부터 현대 상용 발사체, 아르테미스까지."
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
 
-  <body id="top">
-    <header class="topbar">
+  <body id="top" class="page-index">
+    <a class="skip" href="#main">본문 바로가기</a>
+
+    <header class="topbar" role="banner">
       <div class="container topbar__inner">
         <a class="brand" href="#top" aria-label="홈으로">
           <span class="brand__logo" aria-hidden="true">🚀</span>
@@ -23,49 +29,52 @@
 
         <nav class="nav" aria-label="주요 섹션">
           <a href="#timeline">타임라인</a>
-          <a href="#milestones">주요 이정표</a>
-          <a href="#gallery">대표 로켓</a>
-          <a href="#about">문의 연락처</a>
+          <a href="#milestones">역사적 인물</a>
+
+          <a href="#about">문의</a>
         </nav>
 
         <div class="topbar__actions" aria-label="빠른 이동">
-  <a class="btn btn--ghost" href="#timeline">타임라인 보기</a>
-  <a class="btn" href="#gallery">대표 로켓 보기</a>
-</div>
+          <a class="btn btn--ghost" href="#timeline">타임라인</a>
 
-        <button id="themeBtn" class="btn btn--ghost" type="button" aria-label="테마 전환">🌙</button>
+          <button
+            id="themeBtn"
+            class="btn btn--ghost"
+            type="button"
+            aria-label="테마 전환"
+          >
+            🌙
+          </button>
+        </div>
       </div>
     </header>
 
-    <main>
-      <section class="hero">
+    <main id="main">
+      <section class="hero" aria-label="소개">
         <div class="container hero__inner">
-          <div class="hero__split">
+          <div class="hero__copy">
+            <h1>로켓의 역사</h1>
+            <p>
+              인류 공학의 정점, 로켓의 역사를 소개합니다.
+            </p>
 
-  <!-- 왼쪽: 텍스트 영역 -->
-  <div class="hero__copy">
-    <h1>화약에서 재사용 로켓까지</h1>
-    <p class="hero__sub">
-      인류가 하늘을 향해 쏘아 올린 기술의 계보를 시대별로 한눈에 정리합니다.
-    </p>
+            <div class="hero__cta">
+              <a class="btn" href="#timeline">타임라인 시작</a>
 
-    <div class="hero__stats" aria-label="핵심 연표 요약">
-      <!-- 기존 stat 4개 그대로 복붙 -->
-    </div>
-  </div>
+            </div>
 
-  <!-- 오른쪽: 이미지 영역 -->
-
-</div>
+          
+            </p>
+          </div>
         </div>
       </section>
 
-      <section id="timeline" class="section">
+      <section id="timeline" class="section" aria-label="타임라인">
         <div class="container">
           <div class="section__head">
             <h2>타임라인</h2>
 
-            <div class="controls" role="search">
+            <div class="controls" role="search" aria-label="타임라인 검색/필터">
               <label class="sr-only" for="q">타임라인 검색</label>
               <input
                 id="q"
@@ -85,188 +94,81 @@
                 <option value="modern">현대/상용화</option>
               </select>
 
-              <button id="resetBtn" class="btn btn--ghost" type="button">초기화</button>
+              <button id="resetBtn" class="btn btn--ghost" type="button">
+                초기화
+              </button>
             </div>
           </div>
 
-          <ol id="timelineList" class="timeline" aria-label="로켓 역사 타임라인">
-            <li class="event" data-era="early" data-id="firearrow" data-tags="화약 중국 송나라 불화살 13세기">
-              <div class="event__year">~13세기</div>
-              <a class="event__card event__card--link" href="rocket.html?id=firearrow" aria-label="화약 로켓(불화살) 확산 상세로 이동">
-                <h3>화약 로켓(불화살) 확산</h3>
-                <p>화약 추진을 이용한 초기 로켓 형태가 전쟁·신호용으로 사용되며 확산.</p>
-                <span class="card__hint" aria-hidden="true">클릭하여 상세 보기 →</span>
-              </a>
-            </li>
+          <!-- ✅ 하드코딩 제거: script.js가 ROCKETS에서 자동 렌더링 -->
+          <ol id="timelineList" class="timeline" aria-label="로켓 역사 타임라인"></ol>
 
-            <li class="event" data-era="early" data-id="congreve" data-tags="콩그리브 로켓 영국 1800s 인도">
-              <div class="event__year">1800s</div>
-              <a class="event__card event__card--link" href="rocket.html?id=congreve" aria-label="콩그리브 로켓 상세로 이동">
-                <h3>콩그리브 로켓</h3>
-                <p>군사용 로켓이 체계화되며 사거리·정확도 개선 시도.</p>
-                <span class="card__hint" aria-hidden="true">클릭하여 상세 보기 →</span>
-              </a>
-            </li>
-
-            <li class="event" data-era="ww2" data-id="goddard1926" data-tags="로버트 고다드 액체연료 1926">
-              <div class="event__year">1926</div>
-              <a class="event__card event__card--link" href="rocket.html?id=goddard1926" aria-label="액체연료 로켓 실증 상세로 이동">
-                <h3>액체연료 로켓 실증</h3>
-                <p>액체 추진제 기반 로켓이 실험적으로 구현되며 현대 로켓의 토대가 형성.</p>
-                <span class="card__hint" aria-hidden="true">클릭하여 상세 보기 →</span>
-              </a>
-            </li>
-
-            <li class="event" data-era="ww2" data-id="v2" data-tags="V-2 독일 1944 폰브라운">
-              <div class="event__year">1944</div>
-              <a class="event__card event__card--link" href="rocket.html?id=v2" aria-label="V-2 로켓 상세로 이동">
-                <h3>V-2 로켓</h3>
-                <p>대형 액체연료 로켓 기술이 비약적으로 발전. 이후 우주개발 기술로 전이.</p>
-                <span class="card__hint" aria-hidden="true">클릭하여 상세 보기 →</span>
-              </a>
-            </li>
-
-            <li class="event" data-era="space" data-id="sputnik1" data-tags="스푸트니크 1957 소련 인공위성">
-              <div class="event__year">1957</div>
-              <a class="event__card event__card--link" href="rocket.html?id=sputnik1" aria-label="스푸트니크 1호 상세로 이동">
-                <h3>스푸트니크 1호</h3>
-                <p>인류 최초의 인공위성 발사. 우주시대 개막.</p>
-                <span class="card__hint" aria-hidden="true">클릭하여 상세 보기 →</span>
-              </a>
-            </li>
-
-            <li class="event" data-era="space" data-id="vostok1" data-tags="가가린 1961 보스토크">
-              <div class="event__year">1961</div>
-              <a class="event__card event__card--link" href="rocket.html?id=vostok1" aria-label="첫 유인 우주비행 상세로 이동">
-                <h3>첫 유인 우주비행</h3>
-                <p>유인 우주비행 성공으로 로켓은 ‘탑승 가능한 운송수단’이 됨.</p>
-                <span class="card__hint" aria-hidden="true">클릭하여 상세 보기 →</span>
-              </a>
-            </li>
-
-            <li class="event" data-era="space" data-id="saturnv" data-tags="새턴V 1969 아폴로 11 달착륙 Saturn V">
-              <div class="event__year">1969</div>
-              <a class="event__card event__card--link" href="rocket.html?id=saturnv" aria-label="아폴로 11호 달 착륙 상세로 이동">
-                <h3>아폴로 11호 달 착륙</h3>
-                <p>초대형 로켓(새턴 V)으로 달 착륙 달성. 시스템 공학의 상징.</p>
-                <span class="card__hint" aria-hidden="true">클릭하여 상세 보기 →</span>
-              </a>
-            </li>
-
-            <li class="event" data-era="space" data-id="spaceshuttle" data-tags="우주왕복선 1981 재사용 부분재사용">
-              <div class="event__year">1981</div>
-              <a class="event__card event__card--link" href="rocket.html?id=spaceshuttle" aria-label="우주왕복선 시대 상세로 이동">
-                <h3>우주왕복선 시대</h3>
-                <p>부분 재사용 개념을 실용화했으나 운영 비용·복잡성이 과제로 남음.</p>
-                <span class="card__hint" aria-hidden="true">클릭하여 상세 보기 →</span>
-              </a>
-            </li>
-
-            <li class="event" data-era="modern" data-id="falcon9" data-tags="Falcon 9 2015 1단착륙 재사용 SpaceX 상용">
-              <div class="event__year">2015</div>
-              <a class="event__card event__card--link" href="rocket.html?id=falcon9" aria-label="1단 부스터 수직착륙 상세로 이동">
-                <h3>1단 부스터 수직착륙</h3>
-                <p>재사용 로켓이 비용 구조를 바꾸며 상업 발사 시장을 재편.</p>
-                <span class="card__hint" aria-hidden="true">클릭하여 상세 보기 →</span>
-              </a>
-            </li>
-
-            <li class="event" data-era="modern" data-id="artemis" data-tags="아르테미스 달귀환 대형로켓 2020s NASA">
-              <div class="event__year">2020s</div>
-              <a class="event__card event__card--link" href="rocket.html?id=artemis" aria-label="달 귀환·초대형 발사체 경쟁 상세로 이동">
-                <h3>달 귀환·초대형 발사체 경쟁</h3>
-                <p>유인 달 탐사 재개와 초대형 발사체의 본격 경쟁이 진행 중.</p>
-                <span class="card__hint" aria-hidden="true">클릭하여 상세 보기 →</span>
-              </a>
-            </li>
-          </ol>
-        </div>
-      </section>
-
-      <section id="milestones" class="section section--alt">
-        <div class="container">
-          <h2>주요 이정표</h2>
-
-          <!-- 요구사항 3: 여기도 클릭하면 상세 이동 -->
-          <div class="grid">
-            <a class="card card--link" href="rocket.html?id=goddard1926" aria-label="추진제 혁신 상세(고다드)로 이동">
-              <h3>추진제 혁신</h3>
-              <p>고체 → 액체 → 복합/고성능 추진제, 엔진 사이클 고도화.</p>
-              <span class="card__hint" aria-hidden="true">클릭하여 상세 보기 →</span>
-            </a>
-
-            <a class="card card--link" href="rocket.html?id=v2" aria-label="유도·항법 상세(V-2)로 이동">
-              <h3>유도·항법</h3>
-              <p>관성항법·컴퓨팅 발전으로 정확도와 신뢰성이 상승.</p>
-              <span class="card__hint" aria-hidden="true">클릭하여 상세 보기 →</span>
-            </a>
-
-            <a class="card card--link" href="rocket.html?id=falcon9" aria-label="재사용 상세(Falcon 9)로 이동">
-              <h3>재사용</h3>
-              <p>발사체를 ‘소모품’에서 ‘플릿(운용 자산)’으로 전환.</p>
-              <span class="card__hint" aria-hidden="true">클릭하여 상세 보기 →</span>
-            </a>
-
-            <a class="card card--link" href="rocket.html?id=falcon9" aria-label="상용화 상세(Falcon 9)로 이동">
-              <h3>상용화</h3>
-              <p>위성·인터넷·지구관측 수요가 생태계를 확대.</p>
-              <span class="card__hint" aria-hidden="true">클릭하여 상세 보기 →</span>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <section id="gallery" class="section">
-        <div class="container">
-          <h2>대표 로켓</h2>
-
-          <!-- 요구사항 3: 대표 로켓도 클릭하면 상세 이동 -->
-          <div class="gallery">
-            <a class="rocket rocket--link" href="rocket.html?id=sputnik1" aria-label="R-7 계열 상세(스푸트니크/R-7)로 이동">
-              <div class="rocket__badge">1950s</div>
-              <h3>R-7 계열</h3>
-              <p>초기 우주발사의 상징. 인공위성·유인비행 시대를 열었다.</p>
-              <span class="card__hint" aria-hidden="true">클릭하여 상세 보기 →</span>
-            </a>
-
-            <a class="rocket rocket--link" href="rocket.html?id=saturnv" aria-label="Saturn V 상세로 이동">
-              <div class="rocket__badge">1960s</div>
-              <h3>Saturn V</h3>
-              <p>달 착륙을 가능하게 한 초대형 발사체의 아이콘.</p>
-              <span class="card__hint" aria-hidden="true">클릭하여 상세 보기 →</span>
-            </a>
-
-            <a class="rocket rocket--link" href="rocket.html?id=falcon9" aria-label="Falcon 9 상세로 이동">
-              <div class="rocket__badge">2010s</div>
-              <h3>Falcon 9</h3>
-              <p>1단 재사용을 실전 운영으로 정착시켜 비용 구조를 바꿨다.</p>
-              <span class="card__hint" aria-hidden="true">클릭하여 상세 보기 →</span>
-            </a>
-
-            <a class="rocket rocket--link" href="rocket.html?id=artemis" aria-label="차세대 초대형 상세(Artemis)로 이동">
-              <div class="rocket__badge">2020s</div>
-              <h3>차세대 초대형</h3>
-              <p>달·화성·대형 탑재를 목표로 기술·운영 모델이 빠르게 진화 중.</p>
-              <span class="card__hint" aria-hidden="true">클릭하여 상세 보기 →</span>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <section id="about" class="section section--alt">
-        <div class="container">
-          <h2>문의</h2>
-          <p class="about">
-            <a class="about__link" href="mailto:yellowchanpw@gmail.com">yellowchanpw@gmail.com</a>
+          <p id="timelineEmpty" class="muted hidden" role="status" aria-live="polite">
+            조건에 맞는 항목이 없습니다. 검색어를 줄이거나 시대 필터를 바꿔보세요.
           </p>
+        </div>
+      </section>
+
+      <section id="milestones" class="section" aria-label="역사적 인물">
+  <div class="container">
+    <h2>역사적 인물</h2>
+
+    <div class="grid">
+      <a class="card rocket--link" href="rocket.html?id=goddard_person">
+        <h3>로버트 고다드</h3>
+        <p>액체연료 로켓의 개척자</p>
+      </a>
+
+      <a class="card rocket--link" href="rocket.html?id=vonbraun_person">
+        <h3>베르너 폰 브라운</h3>
+        <p>새턴 V 설계 총괄</p>
+      </a>
+
+      <a class="card rocket--link" href="rocket.html?id=korolev_person">
+        <h3>세르게이 코롤료프</h3>
+        <p>소련 우주개발 총설계자</p>
+      </a>
+<a class="card rocket--link" href="rocket.html?id=tsiolk_person">
+  <h3>콘스탄틴 치올코프스키</h3>
+  <p>로켓 방정식·우주비행 이론</p>
+</a>
+
+<a class="card rocket--link" href="rocket.html?id=obert_person">
+  <h3>헤르만 오베르트</h3>
+  <p>현대 로켓공학의 교과서</p>
+</a>
+
+<a class="card rocket--link" href="rocket.html?id=sanger_person">
+  <h3>오이겐 젠거</h3>
+  <p>초고속 비행·우주 접근 개념</p>
+</a>
+
+    </div>
+  </div>
+</section>
+
+    
+      <section id="about" class="section" aria-label="문의">
+        <div class="container">
+          <h2>문의 연락처</h2>
+          <div class="card">
+            <p>
+              개선 제안/자료 추가 요청은 아래로 보내주세요. (예: 더 많은 로켓 추가, 시대 구간 조정,
+              출처 링크 강화)
+            </p>
+            <ul class="list">
+              <li><strong>이메일</strong>: yellowchanpw@gmail.com</li>
+            
+            </ul>
+          </div>
         </div>
       </section>
     </main>
 
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
       <div class="container footer__inner">
-        <span>© Rocket History (Demo)</span>
-        <a href="#top" class="footer__link">맨 위로</a>
+        <p class="muted">© Rocket History.Chanhui Ko.</p>
+        <a class="btn btn--ghost" href="#top">맨 위로</a>
       </div>
     </footer>
 
